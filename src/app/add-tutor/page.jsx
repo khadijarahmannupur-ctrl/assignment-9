@@ -20,7 +20,7 @@ const AddTutorPage = () => {
         const tutor = Object.fromEntries(formData.entries());
 
         
-        const res = await fetch('http://localhost:5000/tutor', {
+        const res = await fetch('http://localhost:5000/addTutor', {
             method: "POST",
             headers: {
                 'content-type' : 'application/json'

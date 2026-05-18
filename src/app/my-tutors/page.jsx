@@ -3,7 +3,7 @@ import React from "react";
 import { Table } from "@heroui/react";
 
 const MyTutorsPage = async () => {
-    const res = await fetch("http://localhost:5000/tutor", {
+    const res = await fetch("http://localhost:5000/addTutor", {
         cache: "no-store",
     });
 
