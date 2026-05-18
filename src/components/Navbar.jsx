@@ -90,6 +90,11 @@ const Navbar = () => {
             </div>
 
             {/* LOGIN BUTTON */}
+            <Link href="/signup">
+              <button className="px-6 h-11 rounded-full bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20">
+                SignUp
+              </button>
+            </Link>
             <Link href="/login">
               <button className="px-6 h-11 rounded-full bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20">
                 Login
