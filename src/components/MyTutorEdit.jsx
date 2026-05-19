@@ -15,10 +15,13 @@ import {
     TextArea,
     TextField,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 const MyTutorEdit = ({ tutor }) => {
+    const router = useRouter();
 
     const {
+        _id,
         tutorName,
         subject,
         availableDays,
@@ -37,8 +40,20 @@ const MyTutorEdit = ({ tutor }) => {
 
         const formData = new FormData(e.currentTarget);
         const updatedTutor = Object.fromEntries(formData.entries());
+        // console.log(updatedTutor);
 
-        console.log(updatedTutor);
+        const res = await fetch(`http://localhost:5000/addTutor/${_id}`, {
+            method: "PATCH",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedTutor)
+        })
+        const data = await res.json();
+        if (data.modifiedCount > 0) {
+            router.refresh();
+        }
+        console.log(data);
     };
 
     return (
