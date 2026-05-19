@@ -1,8 +1,24 @@
 "use client";
 
 import { AlertDialog, Button } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
-export function MyTutorDelete() {
+export function MyTutorDelete({ tutor }) {
+    const { _id } = tutor;
+    const router = useRouter();
+    const handleDelete = async () => {
+        const res = await fetch(`http://localhost:5000/addTutor/${_id}`, {
+            method: "DELETE",
+            headers: {
+                'content-type': 'application/json'
+            },
+        })
+        const data = await res.json();
+        if (data.deletedCount > 0) {
+            router.refresh();
+        }
+        console.log(data)
+    }
     return (
         <AlertDialog>
             {/* OPEN BUTTON */}
@@ -54,6 +70,7 @@ export function MyTutorDelete() {
                             </Button>
 
                             <Button
+                                onClick={handleDelete}
                                 slot="close"
                                 className="rounded-xl bg-red-500 hover:bg-red-600 text-white"
                             >

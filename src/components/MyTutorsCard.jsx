@@ -71,14 +71,6 @@ const MyTutorsCard = ({ tutor, index }) => {
                 <div className="flex items-center gap-3">
                     <MyTutorEdit tutor={tutor}></MyTutorEdit>
                     <MyTutorDelete tutor={tutor}></MyTutorDelete>
-
-
-                    {/* <Button
-                        size="sm"
-                        className="bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium"
-                    >
-                        Delete
-                    </Button> */}
                 </div>
             </Table.Cell>
         </Table.Row>

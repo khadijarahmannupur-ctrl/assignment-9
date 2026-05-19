@@ -50,10 +50,11 @@ const MyTutorEdit = ({ tutor }) => {
             body: JSON.stringify(updatedTutor)
         })
         const data = await res.json();
+        
         if (data.modifiedCount > 0) {
             router.refresh();
         }
-        console.log(data);
+        // console.log(data);
     };
 
     return (
