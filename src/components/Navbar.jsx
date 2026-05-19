@@ -1,19 +1,29 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaBars,
   FaTimes,
-  FaUserCircle,
   FaMoon,
   FaSun,
 } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+
+  const { data: session, isPending } = authClient.useSession();
+
+  const user = session?.user;
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+
+    window.location.href = "/";
+  };
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -34,13 +44,18 @@ const Navbar = () => {
             </div>
 
             <h1 className="text-2xl font-bold">
-              <span className="text-[#005461]">Medi</span>
-              <span className="text-[#00B7B5]">Queue</span>
+              <span className="text-[#005461]">
+                Medi
+              </span>
+
+              <span className="text-[#00B7B5]">
+                Queue
+              </span>
             </h1>
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-[#005461]">
+          <div className="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#005461]">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -53,7 +68,7 @@ const Navbar = () => {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="hidden lg:flex items-center gap-4 relative">
+          <div className="hidden md:flex items-center gap-4">
             {/* THEME BUTTON */}
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -62,50 +77,53 @@ const Navbar = () => {
               {darkMode ? <FaSun /> : <FaMoon />}
             </button>
 
-            {/* PROFILE */}
-            <div className="relative">
-              <button
-                onClick={() => setProfileOpen(!profileOpen)}
-                className="w-11 h-11 rounded-full bg-gradient-to-r from-[#018790] to-[#00B7B5] flex items-center justify-center text-white text-xl shadow-md"
-              >
-                <FaUserCircle />
-              </button>
+            {/* LOADING */}
+            {isPending ? (
+              <div className="w-24 h-11 rounded-full bg-gray-200 animate-pulse"></div>
+            ) : user ? (
+              <>
+                {/* PROFILE IMAGE */}
+                <Link href="/profile">
+                  <Image
+                    src={user?.image}
+                    alt={user?.name}
+                    width={44}
+                    height={44}
+                    className="w-11 h-11 rounded-full object-cover border-2 border-[#00B7B5]"
+                  />
+                </Link>
 
-              {profileOpen && (
-                <div className="absolute right-0 top-14 w-52 bg-white rounded-2xl shadow-xl border border-gray-100 p-3">
-                  <div className="flex flex-col gap-2">
-                    <Link
-                      href="/profile"
-                      className="px-4 py-2 rounded-xl hover:bg-[#F4F4F4] transition-all duration-300 text-[#005461]"
-                    >
-                      Profile
-                    </Link>
+                {/* LOGOUT BUTTON */}
+                <button
+                  onClick={handleLogout}
+                  className="px-6 h-11 rounded-full border border-red-200 text-red-500 font-medium hover:bg-red-500 hover:text-white transition-all duration-300"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                {/* LOGIN */}
+                <Link href="/login">
+                  <button className="px-6 h-11 rounded-full bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20">
+                    Login
+                  </button>
+                </Link>
 
-                    <button className="text-left px-4 py-2 rounded-xl hover:bg-[#F4F4F4] transition-all duration-300 text-red-500">
-                      Logout
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* LOGIN BUTTON */}
-            <Link href="/signup">
-              <button className="px-6 h-11 rounded-full bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20">
-                SignUp
-              </button>
-            </Link>
-            <Link href="/login">
-              <button className="px-6 h-11 rounded-full bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20">
-                Login
-              </button>
-            </Link>
+                {/* SIGNUP */}
+                <Link href="/signup">
+                  <button className="px-6 h-11 rounded-full border border-[#00B7B5]/20 text-[#005461] font-medium hover:bg-[#00B7B5] hover:text-white transition-all duration-300">
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-2xl text-[#005461]"
+            className="md:hidden text-2xl text-[#005461]"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -114,7 +132,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {menuOpen && (
-        <div className="lg:hidden bg-white border-t border-[#00B7B5]/10 px-6 py-6">
+        <div className="md:hidden bg-white border-t border-[#00B7B5]/10 px-6 py-6">
           <div className="flex flex-col gap-5 text-[#005461] font-medium">
             {navLinks.map((link) => (
               <Link
@@ -126,11 +144,48 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <Link href="/login">
-              <button className="w-full mt-2 h-11 rounded-full bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white">
-                Login
-              </button>
-            </Link>
+            {/* MOBILE AUTH */}
+            {user ? (
+              <>
+                <Link
+                  href="/profile"
+                  className="flex items-center gap-3"
+                >
+                  <Image
+                    src={user?.image}
+                    alt={user?.name}
+                    width={44}
+                    height={44}
+                    className="w-11 h-11 rounded-full object-cover border-2 border-[#00B7B5]"
+                  />
+
+                  <span className="font-medium">
+                    {user.name}
+                  </span>
+                </Link>
+
+                <button
+                  onClick={handleLogout}
+                  className="w-full h-11 rounded-full border border-red-200 text-red-500"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <div className="flex flex-col gap-3">
+                <Link href="/login">
+                  <button className="w-full h-11 rounded-full bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white">
+                    Login
+                  </button>
+                </Link>
+
+                <Link href="/signup">
+                  <button className="w-full h-11 rounded-full border border-[#00B7B5]/20 text-[#005461]">
+                    Sign Up
+                  </button>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       )}

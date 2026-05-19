@@ -10,27 +10,29 @@ import {
     TextField,
     FieldError,
 } from "@heroui/react";
-import { authClient } from "@/lib/auth-client";
-import { useRouter, useSearchParams } from "next/navigation";
 
-const SignupPage = () => {
+import { useRouter, useSearchParams } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
+
+const LoginPage = () => {
     const router = useRouter();
+
     const searchParams = useSearchParams();
+
     const from = searchParams.get("from") || "/";
 
     const onSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        const user = Object.fromEntries(formData.entries());
-        // console.log(user)
 
-        const { data, error } = await authClient.signUp.email({
+        const user = Object.fromEntries(formData.entries());
+
+        const { data, error } = await authClient.signIn.email({
             email: user.email,
             password: user.password,
-            name: user.name,
-            image: user.photo,
-        })
+        });
+
         if (data) {
             router.push(from);
         }
@@ -38,6 +40,7 @@ const SignupPage = () => {
         if (error) {
             alert(error.message);
         }
+        // console.log({data, error})
     };
 
     const handleSigninWithGoogle = async () => {
@@ -69,18 +72,17 @@ const SignupPage = () => {
                             <div className="w-2 h-2 rounded-full bg-white"></div>
 
                             <span className="text-sm font-medium text-white">
-                                Join MediQueue Today
+                                Welcome Back
                             </span>
                         </div>
 
                         <h1 className="text-5xl font-bold text-white leading-tight">
-                            Start Your Smart Learning Journey
+                            Continue Your Learning Journey
                         </h1>
 
                         <p className="text-white/80 mt-6 leading-8 text-lg">
-                            Connect with professional tutors, schedule learning
-                            sessions, and improve your academic performance with an
-                            organized booking experience.
+                            Access your tutor sessions, manage bookings, and continue
+                            learning with professional tutors from anywhere.
                         </p>
                     </div>
 
@@ -117,17 +119,17 @@ const SignupPage = () => {
                                 <div className="w-2 h-2 rounded-full bg-[#00B7B5]"></div>
 
                                 <span className="text-sm font-medium text-[#018790]">
-                                    Create New Account
+                                    Login To Your Account
                                 </span>
                             </div>
 
                             <h1 className="text-4xl md:text-5xl font-bold text-[#005461]">
-                                Sign Up
+                                Login
                             </h1>
 
                             <p className="text-gray-500 mt-4 leading-7">
-                                Register now and book learning sessions with skilled
-                                tutors anytime.
+                                Login now and continue booking learning sessions with
+                                professional tutors.
                             </p>
                         </div>
 
@@ -136,24 +138,6 @@ const SignupPage = () => {
                             className="space-y-6"
                             onSubmit={onSubmit}
                         >
-                            {/* NAME */}
-                            <TextField
-                                isRequired
-                                name="name"
-                                className="w-full"
-                            >
-                                <Label className="mb-3 font-semibold text-[#005461]">
-                                    Full Name
-                                </Label>
-
-                                <Input
-                                    placeholder="Enter your full name"
-                                    className="w-full h-14 px-5 rounded-2xl border border-gray-300 bg-white focus-within:border-[#00B7B5] focus-within:ring-0 outline-none"
-                                />
-
-                                <FieldError />
-                            </TextField>
-
                             {/* EMAIL */}
                             <TextField
                                 isRequired
@@ -173,45 +157,12 @@ const SignupPage = () => {
                                 <FieldError />
                             </TextField>
 
-                            {/* PHOTO URL */}
-                            <TextField
-                                isRequired
-                                name="photo"
-                                className="w-full"
-                            >
-                                <Label className="mb-3 font-semibold text-[#005461]">
-                                    Photo URL
-                                </Label>
-
-                                <Input
-                                    placeholder="Enter photo URL"
-                                    className="w-full h-14 px-5 rounded-2xl border border-gray-300 bg-white focus-within:border-[#00B7B5] focus-within:ring-0 outline-none"
-                                />
-
-                                <FieldError />
-                            </TextField>
-
                             {/* PASSWORD */}
                             <TextField
                                 isRequired
                                 name="password"
                                 type="password"
                                 className="w-full"
-                                validate={(value) => {
-                                    if (!/[A-Z]/.test(value)) {
-                                        return "Must contain an uppercase letter";
-                                    }
-
-                                    if (!/[a-z]/.test(value)) {
-                                        return "Must contain a lowercase letter";
-                                    }
-
-                                    if (value.length < 6) {
-                                        return "Password must be at least 6 characters";
-                                    }
-
-                                    return null;
-                                }}
                             >
                                 <Label className="mb-3 font-semibold text-[#005461]">
                                     Password
@@ -225,12 +176,22 @@ const SignupPage = () => {
                                 <FieldError />
                             </TextField>
 
+                            {/* FORGOT PASSWORD */}
+                            <div className="flex justify-end w-full">
+                                <button
+                                    type="button"
+                                    className="text-sm font-medium text-[#018790] hover:underline"
+                                >
+                                    Forgot Password?
+                                </button>
+                            </div>
+
                             {/* BUTTON */}
                             <Button
                                 type="submit"
-                                className="w-full h-14 rounded-2xl bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-semibold text-lg hover:scale-[1.01] transition-all duration-300 mt-4"
+                                className="w-full h-14 rounded-2xl bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-semibold text-lg hover:scale-[1.01] transition-all duration-300 mt-2"
                             >
-                                Create Account
+                                Login
                             </Button>
                         </Form>
 
@@ -250,14 +211,14 @@ const SignupPage = () => {
                             Continue With Google
                         </button>
 
-                        {/* LOGIN */}
+                        {/* REGISTER */}
                         <p className="text-center text-gray-500 mt-8">
-                            Already have an account?{" "}
+                            Don&apos;t have an account?{" "}
                             <Link
-                                href="/login"
+                                href="/signup"
                                 className="text-[#018790] font-semibold hover:underline"
                             >
-                                Login
+                                Signup
                             </Link>
                         </p>
                     </div>
@@ -267,4 +228,4 @@ const SignupPage = () => {
     );
 };
 
-export default SignupPage;
+export default LoginPage;
