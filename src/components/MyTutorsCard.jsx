@@ -3,6 +3,7 @@
 import React from "react";
 import { Button, Table } from "@heroui/react";
 import MyTutorEdit from "./MyTutorEdit";
+import { MyTutorDelete } from "./MyTutorDelete";
 
 const MyTutorsCard = ({ tutor, index }) => {
     const {
@@ -68,21 +69,16 @@ const MyTutorsCard = ({ tutor, index }) => {
             {/* ACTION */}
             <Table.Cell className="overflow-visible">
                 <div className="flex items-center gap-3">
-                    {/* <Button
-                        size="sm"
-                        variant="bordered"
-                        className="border-[#00B7B5]/20 text-[#005461] font-medium"
-                    >
-                        Update
-                    </Button> */}
                     <MyTutorEdit tutor={tutor}></MyTutorEdit>
+                    <MyTutorDelete tutor={tutor}></MyTutorDelete>
 
-                    <Button
+
+                    {/* <Button
                         size="sm"
                         className="bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium"
                     >
                         Delete
-                    </Button>
+                    </Button> */}
                 </div>
             </Table.Cell>
         </Table.Row>
