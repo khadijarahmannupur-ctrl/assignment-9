@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Button, Table } from "@heroui/react";
+import MyTutorEdit from "./MyTutorEdit";
 
 const MyTutorsCard = ({ tutor, index }) => {
     const {
@@ -65,15 +66,16 @@ const MyTutorsCard = ({ tutor, index }) => {
             </Table.Cell>
 
             {/* ACTION */}
-            <Table.Cell>
+            <Table.Cell className="overflow-visible">
                 <div className="flex items-center gap-3">
-                    <Button
+                    {/* <Button
                         size="sm"
                         variant="bordered"
                         className="border-[#00B7B5]/20 text-[#005461] font-medium"
                     >
                         Update
-                    </Button>
+                    </Button> */}
+                    <MyTutorEdit tutor={tutor}></MyTutorEdit>
 
                     <Button
                         size="sm"
