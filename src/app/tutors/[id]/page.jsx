@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+import BookingModal from "@/components/BookingModal";
 
 const TutorDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -154,11 +155,7 @@ const TutorDetailsPage = async ({ params }) => {
                         </div>
 
                         {/* BUTTON */}
-                        <Link href={`/book-session/${id}`} className="mt-auto pt-10">
-                            <button className="w-full h-14 rounded-2xl bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-semibold text-lg hover:scale-[1.01] transition-all duration-300 shadow-lg shadow-cyan-500/20">
-                                Book Session
-                            </button>
-                        </Link>
+                        <BookingModal tutor={tutor}></BookingModal>
                     </div>
                 </div>
             </div>
