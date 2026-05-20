@@ -1,6 +1,10 @@
 import TutorCard from "@/components/TutorCard";
 import React from "react";
 
+export const metadata = {
+    title: "All Tutors | MediQueue",
+};
+
 const TutorsPage = async () => {
     const res = await fetch("http://localhost:5000/tutors", {
         cache: "no-store",

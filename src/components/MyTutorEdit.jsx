@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 // import React from "react";
 import { Envelope } from "@gravity-ui/icons";
 
@@ -42,10 +43,14 @@ const MyTutorEdit = ({ tutor }) => {
         const updatedTutor = Object.fromEntries(formData.entries());
         // console.log(updatedTutor);
 
+        const {data: tokenData} = await authClient.token();
+        console.log(tokenData)
+
         const res = await fetch(`http://localhost:5000/addTutor/${_id}`, {
             method: "PATCH",
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(updatedTutor)
         })

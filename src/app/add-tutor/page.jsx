@@ -11,6 +11,7 @@ import {
     TextArea,
     TextField,
 } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
 
 const AddTutorPage = () => {
     const onSubmit = async(e) => {
@@ -19,11 +20,13 @@ const AddTutorPage = () => {
         const formData = new FormData(e.currentTarget);
         const tutor = Object.fromEntries(formData.entries());
 
-        
+        const {data: tokenData} = await authClient.token();
+        console.log(tokenData)
         const res = await fetch('http://localhost:5000/addTutor', {
             method: "POST",
             headers: {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(tutor)
         })

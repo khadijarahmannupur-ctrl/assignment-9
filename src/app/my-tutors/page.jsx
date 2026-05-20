@@ -1,9 +1,17 @@
 import MyTutorsCard from "@/components/MyTutorsCard";
 import React from "react";
 import { Table } from "@heroui/react";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const MyTutorsPage = async () => {
+    const { token } = await auth.api.getToken({
+        headers: await headers()
+    });
     const res = await fetch("http://localhost:5000/addTutor", {
+        headers: {
+            authorization: `Bearer ${token}`
+        },
         cache: "no-store",
     });
 
