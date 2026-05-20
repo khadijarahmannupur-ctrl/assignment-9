@@ -12,6 +12,7 @@ import {
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter, useSearchParams } from "next/navigation";
+import toast from "react-hot-toast";
 
 const SignupPage = () => {
     const router = useRouter();
@@ -33,10 +34,11 @@ const SignupPage = () => {
         })
         if (data) {
             router.push(from);
+            toast.success('Signup Successfully')
         }
 
         if (error) {
-            alert(error.message);
+            toast.error(error.message);
         }
     };
 
@@ -44,6 +46,7 @@ const SignupPage = () => {
         await authClient.signIn.social({
             provider: "google",
         });
+        toast.success('Signup in Successfully')
     }
 
     return (

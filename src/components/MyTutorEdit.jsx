@@ -17,6 +17,7 @@ import {
     TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const MyTutorEdit = ({ tutor }) => {
     const router = useRouter();
@@ -58,6 +59,7 @@ const MyTutorEdit = ({ tutor }) => {
         
         if (data.modifiedCount > 0) {
             router.refresh();
+            toast.success('Tutor Information Updated Successfully')
         }
         // console.log(data);
     };

@@ -12,6 +12,7 @@ import {
     TextField,
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 const AddTutorPage = () => {
     const onSubmit = async(e) => {
@@ -31,6 +32,9 @@ const AddTutorPage = () => {
             body: JSON.stringify(tutor)
         })
         const data = await res.json();
+        if(data){
+            toast.success("Tutor Added Successfully")
+        }
         console.log(data);
     };
 

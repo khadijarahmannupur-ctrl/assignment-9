@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export function MyTutorDelete({ tutor }) {
     const { _id } = tutor;
@@ -21,6 +22,7 @@ export function MyTutorDelete({ tutor }) {
         const data = await res.json();
         if (data.deletedCount > 0) {
             router.refresh();
+            toast.success('Tutor Deleted Successfully')
         }
         console.log(data)
     }
