@@ -16,7 +16,7 @@ const slides = [
     description:
       "Find experienced tutors, schedule sessions easily, and improve your learning journey with MediQueue.",
     image:
-      "https://i.ibb.co.com/xtDwFSkt/Interior-Design-Business-Workshop-Retreat.jpg",
+      "https://i.ibb.co.com/ycR0PwxT/Mr-G.jpg",
   },
 
   {
@@ -25,7 +25,7 @@ const slides = [
     description:
       "Choose your preferred learning style and connect with tutors anytime from anywhere.",
     image:
-      "https://i.ibb.co.com/ZYW3VTp/teacher-giving-online-class.jpg",
+      "https://i.ibb.co.com/bM7ZBT11/GLA-Online-BCA-Admission-and-Fees-Guide.jpg",
   },
 
   {
@@ -34,7 +34,7 @@ const slides = [
     description:
       "Get personalized tutoring sessions from qualified mentors for every subject.",
     image:
-      "https://i.ibb.co.com/4R1xY8T/students-learning-together.jpg",
+      "https://i.ibb.co.com/RG83rvdZ/download-1.jpg",
   },
 ];
 

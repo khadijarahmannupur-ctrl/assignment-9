@@ -4,6 +4,7 @@ import { AlertDialog, Button } from "@heroui/react";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 const BookingCancelled = ({ booking }) => {
     const router = useRouter();
@@ -11,13 +12,15 @@ const BookingCancelled = ({ booking }) => {
     const [status, setStatus] = useState(booking.bookStatus);
 
     const handleCancelBooking = async () => {
-
+    
+        const {data: tokenData} = await authClient.token();
         const res = await fetch(
             `http://localhost:5000/booking/${booking._id}`,
             {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json",
+                    authorization: `Bearer ${tokenData?.token}`
                 },
             }
         );

@@ -13,8 +13,10 @@ import {
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const AddTutorPage = () => {
+    const router = useRouter();
     const onSubmit = async(e) => {
         e.preventDefault();
 
@@ -22,7 +24,7 @@ const AddTutorPage = () => {
         const tutor = Object.fromEntries(formData.entries());
 
         const {data: tokenData} = await authClient.token();
-        console.log(tokenData)
+        // console.log(tokenData)
         const res = await fetch('http://localhost:5000/addTutor', {
             method: "POST",
             headers: {
@@ -33,7 +35,8 @@ const AddTutorPage = () => {
         })
         const data = await res.json();
         if(data){
-            toast.success("Tutor Added Successfully")
+            toast.success("Tutor Added Successfully");
+            router.push("/my-tutors");
         }
         console.log(data);
     };
