@@ -3,9 +3,11 @@ import React from "react";
 import { Table } from "@heroui/react";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+import MyTutorEdit from "@/components/MyTutorEdit";
+import { MyTutorDelete } from "@/components/MyTutorDelete";
 
 export const metadata = {
-  title: "My Tutors | MediQueue",
+    title: "My Tutors | MediQueue",
 };
 
 const MyTutorsPage = async () => {
@@ -105,14 +107,14 @@ const MyTutorsPage = async () => {
                             </div>
 
                             {/* BUTTONS */}
-                            <div className="flex gap-3 mt-6">
-                                <button className="flex-1 h-11 rounded-xl border border-[#00B7B5]/20 text-[#005461] font-medium text-sm">
-                                    Update
-                                </button>
+                            <div className="flex justify-between gap-3 mt-6 w-full">
+                                <div className="">
+                                    <MyTutorEdit tutor={tutor} />
+                                </div>
 
-                                <button className="flex-1 h-11 rounded-xl bg-gradient-to-r from-[#005461] to-[#00B7B5] text-white font-medium text-sm">
-                                    Delete
-                                </button>
+                                <div className="">
+                                    <MyTutorDelete tutor={tutor} />
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -128,7 +130,7 @@ const MyTutorsPage = async () => {
                             >
                                 {/* HEADER */}
                                 <Table.Header className="bg-gradient-to-r from-[#005461] to-[#00B7B5]">
-                                    <Table.Column className="text-white text-xl">#</Table.Column>
+                                    <Table.Column isRowHeader className="text-white text-xl">#</Table.Column>
                                     <Table.Column className="text-white text-xl">Name</Table.Column>
                                     <Table.Column className="text-white text-xl">Subject</Table.Column>
                                     <Table.Column className="text-white text-xl">Available Days</Table.Column>

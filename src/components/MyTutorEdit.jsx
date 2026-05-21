@@ -71,7 +71,7 @@ const MyTutorEdit = ({ tutor }) => {
                 <Button
                     size="sm"
                     variant="bordered"
-                    className="border-[#00B7B5]/20 text-[#005461] font-medium hover:bg-[#00B7B5]/10"
+                    className="w-full border-[#00B7B5]/20 text-[#005461] font-medium hover:bg-[#00B7B5]/10"
                 >
                     Update
                 </Button>

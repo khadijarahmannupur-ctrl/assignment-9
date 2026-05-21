@@ -29,7 +29,7 @@ const TutorsPage = () => {
         }
     };
 
-    // debounce search + filter
+    
     useEffect(() => {
         const delay = setTimeout(() => {
             fetchTutors();
@@ -38,7 +38,7 @@ const TutorsPage = () => {
         return () => clearTimeout(delay);
     }, [search, startDate, endDate]);
 
-    // first load
+    
     useEffect(() => {
         fetchTutors();
     }, []);
