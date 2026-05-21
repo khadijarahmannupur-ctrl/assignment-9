@@ -121,7 +121,7 @@ Theme preference updates instantly across the entire application.
 
 | Light Mode | Dark Mode |
 |---|---|
-| <img src="./screenshots/Capture.png" width="100%"> | <img src="./screenshots/Capture-1.png" width="100%"> |
+| <img src="./public/screenshots/Capture.PNG" width="100%"> | <img src="./public/screenshots/Capture-1.PNG" width="100%"> |
 
 ---
 
@@ -129,7 +129,7 @@ Theme preference updates instantly across the entire application.
 
 | Tutors List | Search & Filter |
 |---|---|
-| <img src="./screenshots/Capture-2.png" width="100%"> | <img src="./screenshots/Capture-3.png" width="100%"> |
+| <img src="./public/screenshots/Capture-2.PNG" width="100%"> | <img src="./public/screenshots/Capture-3.PNG" width="100%"> |
 
 ---
 
@@ -137,7 +137,7 @@ Theme preference updates instantly across the entire application.
 
 | Tutor Details | Booking Modal |
 |---|---|
-| <img src="./screenshots/Capture-4.png" width="100%"> | <img src="./screenshots/Capture-5.png" width="100%"> |
+| <img src="./public/screenshots/Capture-4.PNG" width="100%"> | <img src="./public/screenshots/Capture-5.PNG" width="100%"> |
 
 ---
 
@@ -145,6 +145,4 @@ Theme preference updates instantly across the entire application.
 
 | My Tutors | My Booked Sessions |
 |---|---|
-| <img src="./screenshots/Capture-6.png" width="100%"> | <img src="./screenshots/Capture-7.png" width="100%"> |
-
----
+| <img src="./public/screenshots/Capture-6.PNG" width="100%"> | <img src="./public/screenshots/Capture-7.PNG" width="100%"> |
