@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MediQueue – Tutor Booking System
 
-## Getting Started
+A modern full-stack tutor booking platform where students can explore tutors, book learning sessions, manage bookings, and experience a seamless scheduling system with authentication, protected routes, search & filtering, dark mode, and responsive UI.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🌐 **Client:** https://assignment-9-six.vercel.app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🌐 **Server:** https://assignment-9-server-peach.vercel.app
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔗 Repositories
 
-To learn more about Next.js, take a look at the following resources:
+💻 **Client Repository:** https://github.com/khadijarahmannupur-ctrl/assignment-9
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🛠️ **Server Repository:** https://github.com/khadijarahmannupur-ctrl/assignment-9-server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# 📌 Project Overview
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+MediQueue is a professional tutor booking web application designed to simplify online learning session management.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Students can browse tutors, search by tutor name, filter tutors by available session date, and book learning sessions easily. The platform automatically manages tutor slot availability, booking restrictions, and booking status updates.
+
+The project focuses on creating a clean, modern, and user-friendly experience with secure authentication and smooth performance across all devices.
+
+---
+
+# ✨ Key Features
+
+- 🔐 JWT Authentication & Protected Routes
+- 🌗 Dark / Light Theme Toggle
+- 🔎 Tutor Search with MongoDB Regex
+- 📅 Tutor Filtering by Session Date
+- 📚 Tutor Booking System
+- ⛔ Booking Restriction Based on Slot & Date
+- 📉 Auto Slot Decrease After Booking
+- ❌ Booking Cancellation System
+- 🧾 Dynamic Route Based Pages
+- ⚡ Loading Spinner & Toast Notifications
+- 📱 Fully Responsive Design
+- 🎨 Modern UI with HeroUI & Tailwind CSS
+- 🔄 Real-time UI Update without Reload
+
+---
+
+# 🛠️ Technologies Used
+
+## Frontend
+
+- Next.js 16
+- React.js
+- Tailwind CSS
+- HeroUI
+- React Hot Toast
+- React Icons
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+- JOSE
+
+---
+
+# 🔐 Authentication Features
+
+- Email & Password Login/Register
+- Google Authentication
+- JWT Token Verification
+- Protected Private Routes
+- Persistent Login After Reload
+
+---
+
+# 📚 Tutor Features
+
+- Add Tutor
+- Update Tutor
+- Delete Tutor
+- Browse All Tutors
+- Tutor Details Page
+- Search Tutors by Name
+- Filter Tutors by Date Range
+
+---
+
+# 🎯 Booking Features
+
+- Book Tutor Session
+- Auto Generate Booking Status
+- Prevent Booking if:
+  - No Slots Available
+  - Session Date Expired
+- Cancel Booking
+- Booking Status Update
+- Auto Decrease Tutor Slots
+
+---
+
+# 🌗 Theme Support
+
+The application supports both:
+
+- ☀️ Light Mode
+- 🌙 Dark Mode
+
+Theme preference updates instantly across the entire application.
+
+---
+
+# 📸 Project Screenshots
+
+## 🏠 Home Page
+
+| Light Mode | Dark Mode |
+|---|---|
+| <img src="./screenshots/Capture.png" width="100%"> | <img src="./screenshots/Capture-1.png" width="100%"> |
+
+---
+
+## 👨‍🏫 Tutors Page
+
+| Tutors List | Search & Filter |
+|---|---|
+| <img src="./screenshots/Capture-2.png" width="100%"> | <img src="./screenshots/Capture-3.png" width="100%"> |
+
+---
+
+## 📘 Tutor Details & Booking
+
+| Tutor Details | Booking Modal |
+|---|---|
+| <img src="./screenshots/Capture-4.png" width="100%"> | <img src="./screenshots/Capture-5.png" width="100%"> |
+
+---
+
+## 📋 Dashboard Pages
+
+| My Tutors | My Booked Sessions |
+|---|---|
+| <img src="./screenshots/Capture-6.png" width="100%"> | <img src="./screenshots/Capture-7.png" width="100%"> |
+
+---
