@@ -4,6 +4,10 @@ import LearningStatsSection from "@/components/LearningStatsSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Home | MediQueue",
+};
+
 export default function Home() {
   return (
     <>

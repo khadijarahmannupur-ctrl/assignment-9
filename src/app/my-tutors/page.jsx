@@ -4,11 +4,15 @@ import { Table } from "@heroui/react";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
+export const metadata = {
+  title: "My Tutors | MediQueue",
+};
+
 const MyTutorsPage = async () => {
     const { token } = await auth.api.getToken({
         headers: await headers()
     });
-    const res = await fetch("http://localhost:5000/addTutor", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/addTutor`, {
         headers: {
             authorization: `Bearer ${token}`
         },

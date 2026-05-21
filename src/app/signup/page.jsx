@@ -11,13 +11,11 @@ import {
     FieldError,
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 const SignupPage = () => {
     const router = useRouter();
-    const searchParams = useSearchParams();
-    const from = searchParams.get("from") || "/";
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -33,7 +31,7 @@ const SignupPage = () => {
             image: user.photo,
         })
         if (data) {
-            router.push(from);
+            router.push('/');
             toast.success('Signup Successfully')
         }
 

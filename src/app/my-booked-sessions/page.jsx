@@ -2,6 +2,10 @@ import BookingCancelled from "@/components/BookingCancelled";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
+export const metadata = {
+  title: "My Booked Sessions | MediQueue",
+};
+
 const MyBookedSessions = async () => {
 
     const session = await auth.api.getSession({
@@ -15,7 +19,7 @@ const MyBookedSessions = async () => {
     });
 
     const res = await fetch(
-        `http://localhost:5000/booking/${user?.id}`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${user?.id}`,
         {
             headers: {
                 authorization: `Bearer ${token}`

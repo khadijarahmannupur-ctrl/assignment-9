@@ -3,7 +3,7 @@ import Link from "next/link";
 import TutorCard from "./TutorCard";
 
 const HomepageTutorsCard = async () => {
-    const res = await fetch("http://localhost:5000/feature", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/feature`, {
         cache: "no-store",
     });
 

@@ -25,7 +25,7 @@ const AddTutorPage = () => {
 
         const {data: tokenData} = await authClient.token();
         // console.log(tokenData)
-        const res = await fetch('http://localhost:5000/addTutor', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/addTutor`, {
             method: "POST",
             headers: {
                 'content-type' : 'application/json',
