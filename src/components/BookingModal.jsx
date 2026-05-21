@@ -85,7 +85,7 @@ const BookingModal = ({ tutor }) => {
 
                 <Modal.Container placement="center">
 
-                    <Modal.Dialog className="w-full max-w-2xl rounded-[35px] overflow-hidden bg-[#F4F4F4] border border-[#00B7B5]/10 shadow-2xl">
+                    <Modal.Dialog className="w-full max-w-2xl rounded-[35px] overflow-hidden bg-[#F4F4F4] dark:bg-[#111827] border border-[#00B7B5]/10 shadow-2xl">
 
                         <Modal.CloseTrigger />
 

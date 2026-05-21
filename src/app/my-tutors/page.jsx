@@ -54,7 +54,7 @@ const MyTutorsPage = async () => {
                     {tutors.map((tutor, index) => (
                         <div
                             key={tutor._id}
-                            className="bg-white rounded-[28px] border border-[#00B7B5]/10 shadow-sm p-5"
+                            className="bg-white dark:bg-[#111827] rounded-[28px] border border-[#00B7B5]/10 shadow-sm p-5"
                         >
                             {/* TOP */}
                             <div className="flex items-start justify-between gap-4 mb-5">
@@ -121,7 +121,7 @@ const MyTutorsPage = async () => {
                 </div>
 
                 {/* DESKTOP TABLE */}
-                <div className="hidden lg:block bg-white rounded-[30px] border border-[#00B7B5]/10 shadow-sm overflow-hidden">
+                <div className="hidden lg:block bg-white dark:bg-[#111827] rounded-[30px] border border-[#00B7B5]/10 shadow-sm overflow-hidden">
                     <Table>
                         <Table.ScrollContainer>
                             <Table.Content

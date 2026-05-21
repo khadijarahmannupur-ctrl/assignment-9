@@ -6,7 +6,7 @@ import { Button } from "@heroui/react";
 const ErrorPage = ({ error, reset }) => {
 
     return (
-        <section className="min-h-screen bg-[#F4F4F4] flex items-center justify-center px-4 overflow-hidden">
+        <section className="min-h-screen bg-white dark:bg-[#111827] flex items-center justify-center px-4 overflow-hidden">
 
             <div className="relative max-w-5xl w-full rounded-[40px] overflow-hidden border border-red-200 shadow-2xl bg-gradient-to-br from-[#005461] via-[#018790] to-[#00B7B5] p-8 md:p-16">
 
@@ -60,7 +60,7 @@ const ErrorPage = ({ error, reset }) => {
 
                         <Button
                             onPress={() => reset()}
-                            className="w-full sm:w-52 h-14 rounded-2xl bg-white text-[#005461] font-bold text-lg hover:scale-[1.02] transition-all duration-300"
+                            className="w-full sm:w-52 h-14 rounded-2xl bg-white dark:bg-[#111827] text-[#005461] font-bold text-lg hover:scale-[1.02] transition-all duration-300"
                         >
                             Try Again
                         </Button>
@@ -68,7 +68,7 @@ const ErrorPage = ({ error, reset }) => {
                         <Link href="/">
                             <Button
                                 variant="bordered"
-                                className="w-full sm:w-52 h-14 rounded-2xl border-white text-white font-bold text-lg hover:bg-white/10 transition-all duration-300"
+                                className="w-full sm:w-52 h-14 rounded-2xl border-white text-white font-bold text-lg hover:bg-white/10 hover:dark:bg-[#111827] transition-all duration-300"
                             >
                                 Go Home
                             </Button>

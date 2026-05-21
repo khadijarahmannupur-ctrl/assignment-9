@@ -62,7 +62,7 @@ const MyBookedSessions = async () => {
                 {
                     bookings.length === 0 ? (
 
-                        <div className="rounded-[35px] border border-[#00B7B5]/10 bg-white shadow-xl">
+                        <div className="rounded-[35px] border border-[#00B7B5]/10 bg-white dark:bg-[#111827] shadow-xl">
 
                             <div className="py-24 px-6 flex flex-col items-center justify-center text-center">
 
@@ -89,7 +89,7 @@ const MyBookedSessions = async () => {
 
                     ) : (
 
-                        <div className="rounded-[35px] overflow-hidden border border-[#00B7B5]/10 bg-white shadow-xl">
+                        <div className="rounded-[35px] overflow-hidden border border-[#00B7B5]/10 bg-white dark:bg-[#111827] shadow-xl">
 
                             <div className="overflow-x-auto">
 

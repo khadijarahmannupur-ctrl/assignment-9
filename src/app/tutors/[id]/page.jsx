@@ -37,7 +37,7 @@ const TutorDetailsPage = async ({ params }) => {
     } = tutor;
 
     return (
-        <section className="min-h-screen bg-[#F4F4F4] py-10 md:py-16 px-4">
+        <section className="min-h-screen bg-[#F4F4F4] dark:bg-[#111827] py-10 md:py-16 px-4">
             <div className="max-w-6xl mx-auto">
                 {/* TOP SECTION */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">

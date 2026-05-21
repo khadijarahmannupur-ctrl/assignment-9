@@ -40,7 +40,7 @@ export function MyTutorDelete({ tutor }) {
             <AlertDialog.Backdrop className="bg-black/40 backdrop-blur-sm">
                 <AlertDialog.Container>
 
-                    <AlertDialog.Dialog className="sm:max-w-[420px] rounded-[30px] border border-red-100 bg-white shadow-2xl overflow-hidden">
+                    <AlertDialog.Dialog className="sm:max-w-[420px] rounded-[30px] border border-red-100 bg-white dark:bg-[#111827] shadow-2xl overflow-hidden">
 
                         <AlertDialog.CloseTrigger />
 

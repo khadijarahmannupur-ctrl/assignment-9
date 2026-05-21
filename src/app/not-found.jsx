@@ -5,7 +5,7 @@ import { Button } from "@heroui/react";
 
 const NotFoundPage = () => {
     return (
-        <section className="min-h-screen bg-[#F4F4F4] flex items-center justify-center px-4 py-20 overflow-hidden">
+        <section className="min-h-screen bg-[#F4F4F4] dark:bg-[#111827] flex items-center justify-center px-4 py-20 overflow-hidden">
 
             <div className="relative max-w-5xl w-full rounded-[40px] overflow-hidden border border-[#00B7B5]/10 shadow-2xl bg-gradient-to-br from-[#005461] via-[#018790] to-[#00B7B5] p-8 md:p-16">
 
@@ -22,9 +22,9 @@ const NotFoundPage = () => {
                     </h1>
 
                     {/* BADGE */}
-                    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-xl mt-2">
+                    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 dark:bg-[#111827]/10 border border-white/10 backdrop-blur-xl mt-2">
 
-                        <div className="w-2 h-2 rounded-full bg-white"></div>
+                        <div className="w-2 h-2 rounded-full bg-white dark:bg-[#111827]"></div>
 
                         <span className="text-sm font-medium text-white">
                             Page Not Found
@@ -48,7 +48,7 @@ const NotFoundPage = () => {
 
                         <Link href="/">
                             <Button
-                                className="w-full sm:w-52 h-14 rounded-2xl bg-white text-[#005461] font-bold text-lg hover:scale-[1.02] transition-all duration-300"
+                                className="w-full sm:w-52 h-14 rounded-2xl bg-white dark:bg-[#111827] text-[#005461] font-bold text-lg hover:scale-[1.02] transition-all duration-300"
                             >
                                 Go Home
                             </Button>
@@ -57,7 +57,7 @@ const NotFoundPage = () => {
                         <Link href="/tutors">
                             <Button
                                 variant="bordered"
-                                className="w-full sm:w-52 h-14 rounded-2xl border-white text-white font-bold text-lg hover:bg-white/10 transition-all duration-300"
+                                className="w-full sm:w-52 h-14 rounded-2xl border-white text-white font-bold text-lg hover:bg-white/10 hover:dark:bg-[#111827] transition-all duration-300"
                             >
                                 Explore Tutors
                             </Button>

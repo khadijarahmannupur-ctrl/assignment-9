@@ -56,7 +56,7 @@ const WhyChooseSection = () => {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="group bg-[#F4F4F4] border border-[#00B7B5]/10 rounded-[28px] p-7 hover:bg-white hover:shadow-xl transition-all duration-500"
+                            className="group bg-[#F4F4F4] dark:bg-[#111827] border border-[#00B7B5]/10 rounded-[28px] p-7 hover:bg-white hover:dark:bg-[#111827] hover:shadow-xl transition-all duration-500"
                         >
                             {/* NUMBER */}
                             <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#005461] to-[#00B7B5] flex items-center justify-center text-white font-bold text-xl">

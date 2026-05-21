@@ -17,7 +17,7 @@ const TutorCard = ({ tutor }) => {
     } = tutor;
 
     return (
-        <Card className="group p-0 bg-white border border-[#00B7B5]/10 rounded-[28px] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+        <Card className="group p-0 bg-white dark:bg-[#111827] border border-[#00B7B5]/10 rounded-[28px] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden">
             {/* IMAGE */}
             <div className="relative overflow-hidden">
                 <Image

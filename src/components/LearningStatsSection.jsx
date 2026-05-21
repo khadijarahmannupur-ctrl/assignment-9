@@ -21,7 +21,7 @@ const LearningStatsSection = () => {
     ];
 
     return (
-        <section className="py-16 md:py-24 px-4 bg-[#F4F4F4]">
+        <section className="py-16 md:py-24 px-4 bg-[#F4F4F4] dark:bg-[#111827]">
             <div className="max-w-7xl mx-auto">
                 {/* WRAPPER */}
                 <div className="bg-gradient-to-r from-[#005461] to-[#00B7B5] rounded-[40px] p-8 md:p-14 overflow-hidden relative">

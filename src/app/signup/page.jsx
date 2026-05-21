@@ -48,7 +48,7 @@ const SignupPage = () => {
     }
 
     return (
-        <section className="min-h-screen bg-[#F4F4F4] flex items-center justify-center px-4 py-10">
+        <section className="min-h-screen bg-[#F4F4F4] dark:bg-[#111827] flex items-center justify-center px-4 py-10">
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 bg-white rounded-[40px] overflow-hidden border border-[#00B7B5]/10 shadow-xl">
                 {/* LEFT SIDE */}
                 <div className="relative hidden lg:flex flex-col justify-between p-12 bg-gradient-to-br from-[#005461] via-[#018790] to-[#00B7B5] overflow-hidden">

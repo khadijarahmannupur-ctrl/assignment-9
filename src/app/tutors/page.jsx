@@ -44,7 +44,7 @@ const TutorsPage = () => {
     }, []);
 
     return (
-        <section className="min-h-screen bg-[#F4F4F4] py-10 md:py-16 px-4">
+        <section className="min-h-screen bg-[#F4F4F4] dark:bg-[#111827] py-10 md:py-16 px-4">
             <div className="max-w-7xl mx-auto">
 
                 {/* SEARCH + FILTER UI */}

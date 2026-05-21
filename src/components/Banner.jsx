@@ -71,7 +71,7 @@ const Banner = () => {
                   <div className="max-w-2xl text-white">
 
                     {/* BADGE */}
-                    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+                    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 dark:bg-[#111827] backdrop-blur-md border border-white/20 mb-6">
 
                       <span className="w-2 h-2 rounded-full bg-[#00FFD1]"></span>
 
@@ -96,13 +96,13 @@ const Banner = () => {
 
                       <Link href="/tutors">
 
-                        <button className="px-8 h-14 rounded-full bg-white text-[#005461] font-semibold hover:scale-105 transition-all duration-300 shadow-xl">
+                        <button className="px-8 h-14 rounded-full bg-white dark:bg-[#111827] text-[#005461] font-semibold hover:scale-105 transition-all duration-300 shadow-xl">
                           Explore Tutors
                         </button>
 
                       </Link>
 
-                      <button className="px-8 h-14 rounded-full border border-white/30 backdrop-blur-md text-white font-semibold hover:bg-white hover:text-[#005461] transition-all duration-300">
+                      <button className="px-8 h-14 rounded-full border border-white/30 backdrop-blur-md text-white font-semibold hover:bg-white hover:dark:bg-[#111827] hover:text-[#005461] transition-all duration-300">
                         Learn More
                       </button>
 

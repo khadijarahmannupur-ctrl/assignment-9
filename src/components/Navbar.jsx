@@ -35,7 +35,7 @@ const Navbar = () => {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-[#00B7B5]/10 bg-white dark:bg-[#0B0F19] backdrop-blur-xl shadow-sm transition-colors">
+    <nav className="sticky top-0 z-50 border-b border-[#00B7B5]/10 bg-white dark:bg-[#111827] backdrop-blur-xl shadow-sm transition-colors">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="h-20 flex items-center justify-between">
 
@@ -128,7 +128,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-[#0B0F19] border-t px-6 py-6">
+        <div className="md:hidden bg-white dark:bg-[#111827] border-t px-6 py-6">
           <div className="flex flex-col gap-5 text-[#005461] dark:text-white">
 
             {navLinks.map((link) => (

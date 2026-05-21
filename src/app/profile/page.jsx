@@ -38,7 +38,7 @@ const ProfilePage = () => {
     };
 
     return (
-        <section className="min-h-screen bg-[#F4F4F4] py-10 px-4 md:px-8">
+        <section className="min-h-screen bg-[#F4F4F4] dark:bg-[#111827] py-10 px-4 md:px-8">
 
             <div className="max-w-6xl mx-auto">
 
@@ -55,7 +55,7 @@ const ProfilePage = () => {
                         {/* IMAGE */}
                         <div className="relative">
 
-                            <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl bg-white">
+                            <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl bg-white dark:bg-[#111827]">
 
                                 <Image
                                     src={
@@ -125,7 +125,7 @@ const ProfilePage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
 
                     {/* LEFT */}
-                    <Card className="lg:col-span-2 rounded-[35px] border border-[#00B7B5]/10 bg-white shadow-lg p-8 md:p-10">
+                    <Card className="lg:col-span-2 rounded-[35px] border border-[#00B7B5]/10 bg-white dark:bg-[#111827] shadow-lg p-8 md:p-10">
 
                         <div>
 
@@ -202,7 +202,7 @@ const ProfilePage = () => {
                     </Card>
 
                     {/* RIGHT */}
-                    <Card className="rounded-[35px] border border-[#00B7B5]/10 bg-white shadow-lg p-8 h-fit">
+                    <Card className="rounded-[35px] border border-[#00B7B5]/10 bg-white dark:bg-[#111827] shadow-lg p-8 h-fit">
 
                         <h2 className="text-2xl font-bold text-[#005461] mb-2">
                             Account Actions
